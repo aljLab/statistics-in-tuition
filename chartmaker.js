@@ -1,8 +1,3 @@
-/*var values=[
-    {x:2, y:8},
-    {x:4, y: 15},
-    {x: 1, y:4}
-];*/
 const canvas = document.getElementById("graph");
 const ctx = canvas.getContext('2d');
 
@@ -76,5 +71,47 @@ function makeBarPlot(){
   function clearCanvas(){ 
     canvas.clearRect(0,0,canvas.clientHeight, canvas.width);
   }
+
+  const cols = document.querySelectorAll('.draggy');
+  cols.forEach(col =>{
+    addEventListener('dragstart', dragStart);
+})
+  function dragStart(e){
+        e.dataTransfer.setData('text/plain', e.target.id);
+        setTimeout(() => {
+            e.target.classList.add('hide');
+        }, 0);
+  }
+
+  const dtargets = document.querySelectorAll('.dropInput');
+  dtargets.forEach(target => {
+        target.addEventListener('dragenter', dragEnter);
+        target.addEventListener('dragover', dragOver);
+        target.addEventListener('dragleave', dragLeave);
+        target.addEventListener('drop', drop);
+  })
+
+  function dragEnter(e){
+    e.preventDefault();
+    e.target.classList.add("drag-over");
+  }
+  function dragOver(e){
+    e.preventDefault();
+    e.target.classList.add("drag-over");
+  }
+  function dragLeave(e){
+    e.target.classList.remove('drag-over');
+  }
+  function drop(e){
+    e.preventDefault();
+    e.target.classList.remove('drag-over');
+    const id = e.dataTransfer.getData('text/plain');
+    const container = document.getElementById('dndmenu');
+    container.removeChild(document.getElementById(id));
+    
+    e.target.classList.add ('inputClosed');
+  }
+
+
     
 
