@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Statistics In(tution)</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="chartmaker.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Pacifico&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id="navbar">
+            <p id="logo">Statistics In(Tuition)</p>
+        </div>
+        <div id="mainContainer">
+            <div id="leftNav">
+                <button class="menuButton" onclick = "makeBarPlot()">Bar Plot</button>
+                <button class="menuButton" onclick = "makeScatterPlot()">Scatter Plot</button>
+                <button class="menuButton" onclick = "makeLinePlot()">Line Plot</button>
+                <button class="menuButton" onclick = "makeDonutPlot()">Donut Plot</button>
+            </div>
+            <canvas id="graph"></canvas>
+            <div id="dndmenu">
+                <div class='draggable' id="counterVariable"></div>
+            </div>
+        </div>
+        <div id="bottombar"></div>
+    </body>
+    <footer></footer>
+</html>
