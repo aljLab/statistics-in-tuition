@@ -108,7 +108,7 @@ function makeBarPlot(){
     const id = e.dataTransfer.getData('text/plain');
     const container = document.getElementById('dndmenu');
     container.removeChild(document.getElementById(id));
-    
+    e.target.innerHTML= "Dropped: "+ id;
     e.target.classList.add ('inputClosed');
   }
 

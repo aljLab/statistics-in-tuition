@@ -103,3 +103,32 @@ body{
     border: solid 2 px gray;
     background-color: darkgray;
 }
+
+#canvas{
+    width: 95%;
+    height: 500px;
+    background-color: antiquewhite;
+    margin: 2.5%;
+    border: solid 5px darkgrey ;
+    border-radius: 15px;
+    overflow: scroll;
+}
+#menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.menuitem{
+    padding: 5px;
+    text-align: center;
+    width: 100px;
+    height: 40px;
+    border: solid 4px gray;
+    border-radius: 5px;
+    margin: 5px;
+    background-color: bisque;
+}
+.menuitem:hover{
+    cursor: pointer;
+}
